@@ -93,7 +93,7 @@ WITH TopCategories AS (
     JOIN Products p ON od.ProductID = p.ProductID
     JOIN Categories c ON c.CategoryID = p.CategoryID
     JOIN Orders o ON o.OrderID = od.OrderID
-    GROUP BY c.CategoryName, p.ProductName, YEAR(o.OrderDate)
+    GROUP BY c.CategoryName, p.ProductName
 )
 SELECT CategoryName, ProductName, SUM(Total_Sales) AS TotalSales
 FROM ( 
